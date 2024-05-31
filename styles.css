@@ -1,0 +1,19 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+body{
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 5fr;
+}
+
+ .library-header{
+    grid-row: 1,2;
+}
+.library-main{
+    grid-row: 2,3;
+} 
