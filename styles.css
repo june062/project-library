@@ -8,12 +8,20 @@
 body{
     height: 100vh;
     display: grid;
-    grid-template-rows: 1fr 5fr;
+    grid-template-rows: 1fr 1fr 6fr;
+    grid-template-columns: 1fr 5fr 5fr 5fr 1fr;
 }
 
  .library-header{
-    grid-row: 1,2;
+    grid-area: 1,2,2,5;
+    border: solid black;
 }
+
 .library-main{
-    grid-row: 2,3;
+    grid-area: 2,2,4,5;
+    border: solid black;
 } 
+.add-book-container{
+    grid-area: 2,3,3,4;
+    border: solid black;
+}
