@@ -13,15 +13,17 @@ body{
 }
 
  .library-header{
-    grid-area: 1,2,2,5;
+    grid-area: 1/2/2/5;
     border: solid black;
 }
 
 .library-main{
-    grid-area: 2,2,4,5;
+    grid-area: 3/2/4/5;
     border: solid black;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
 } 
 .add-book-container{
-    grid-area: 2,3,3,4;
+    grid-area: 2/3/3/4;
     border: solid black;
 }
