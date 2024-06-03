@@ -1,5 +1,13 @@
 let bookCardArea = document.querySelector(".library-main");
-let addBook = document.querySelector(".add-book")
-let dialog = document.querySelector("dialog")
+let addBook = document.querySelector(".add-book");
+let submitForm = document.querySelector(".submit-form");
+let closeForm = document.querySelector(".close-form")
+let dialog = document.querySelector("dialog");
 
-addBook.addEventListener("click", ()=> {dialog.showModal()})
+
+addBook.addEventListener("click", ()=> 
+{dialog.showModal()}
+
+)
+closeForm.addEventListener("click", () =>
+{dialog.close()})
