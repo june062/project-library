@@ -5,6 +5,17 @@ let closeForm = document.querySelector(".close-form")
 let dialog = document.querySelector("dialog");
 
 
+let myLibrary = [];
+
+function Book(){
+
+}
+
+function addBookToLibrary(){
+    
+}
+
+
 addBook.addEventListener("click", ()=> 
 {dialog.showModal()}
 
