@@ -13,6 +13,33 @@ let read = document.querySelector("#read");
 
 let myLibrary = [];
 
+function displayLastLibraryItem(){
+    let bookCard = document.createElement("div");
+    bookCardArea.appendChild(bookCard);
+
+    let titleSpan =  document.createElement("span");
+    titleSpan.classList.add("title");
+
+    let authorSpan = document.createElement("span");
+    authorSpan.classList.add("author");
+
+    let pagesSpan =  document.createElement("span");
+    pagesSpan.classList.add("pages");
+
+    let readSpan =  document.createElement("span");
+    readSpan.classList.add("read");
+
+    bookCard.appendChild(titleSpan);
+    bookCard.appendChild(authorSpan);
+    bookCard.appendChild(pagesSpan);
+    bookCard.appendChild(readSpan);
+
+    authorSpan.textContent = myLibrary[myLibrary.length - 1].author;
+    titleSpan.textContent = myLibrary[myLibrary.length - 1].title;
+    pagesSpan.textContent = myLibrary[myLibrary.length - 1].pages;
+    readSpan.textContent = myLibrary[myLibrary.length - 1].read;
+}
+
 function Book(title, author, pages, read){
     this.title = title;
     this.author = author;
@@ -27,10 +54,11 @@ function addBookToLibrary(){
     let pagesVal = pages.value;
     let readVal = read.checked;
 
-    let firstObj = new Book(titleVal, authorVal, pagesVal, readVal);
-    myLibrary.push(firstObj);
+    let newBook = new Book(titleVal, authorVal, pagesVal, readVal);
+    myLibrary.push(newBook);
     
-    
+    displayLastLibraryItem();
+
 }
 submitForm.addEventListener("click", addBookToLibrary)
 
