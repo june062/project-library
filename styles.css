@@ -75,3 +75,8 @@ dialog > main{
     justify-content: space-between;
 }
 
+button.delete-card{
+    width: 200px;
+    height: 50px;
+}
+

@@ -15,6 +15,8 @@ let myLibrary = [];
 
 function displayLastLibraryItem(){
     let bookCard = document.createElement("div");
+    bookCard.classList.add("book-card");
+    bookCard.setAttribute("data-arrayIndex", myLibrary.length - 1); 
     bookCardArea.appendChild(bookCard);
 
     let titleSpan =  document.createElement("span");
@@ -29,10 +31,16 @@ function displayLastLibraryItem(){
     let readSpan =  document.createElement("span");
     readSpan.classList.add("read");
 
+    let deleteCard = document.createElement("button");
+    deleteCard.classList.add("delete-card");
+    deleteCard.textContent = "Delete";
+
+
     bookCard.appendChild(titleSpan);
     bookCard.appendChild(authorSpan);
     bookCard.appendChild(pagesSpan);
     bookCard.appendChild(readSpan);
+    bookCard.appendChild(deleteCard);
 
     authorSpan.textContent = myLibrary[myLibrary.length - 1].author;
     titleSpan.textContent = myLibrary[myLibrary.length - 1].title;
