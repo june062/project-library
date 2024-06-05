@@ -78,8 +78,9 @@ bookCardArea.addEventListener("click", (event)=>{
     let bookArrayString = event.target.parentNode.dataset.arrayindex;
     let bookArrayNum = +bookArrayString;
     myLibrary.splice(bookArrayNum, 1);
-
-
+    if(event.target.textContent === "Delete"){
+        event.target.parentNode.remove();
+    }
 })
 
 
