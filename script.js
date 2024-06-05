@@ -3,6 +3,7 @@ let addBook = document.querySelector(".add-book");
 let submitForm = document.querySelector(".submit-form");
 let closeForm = document.querySelector(".close-form")
 let dialog = document.querySelector("dialog");
+let deleteButton = document.querySelector(".delete-card");
 
 let title = document.querySelector("#title");
 let author = document.querySelector("#author");
@@ -46,6 +47,7 @@ function displayLastLibraryItem(){
     titleSpan.textContent = myLibrary[myLibrary.length - 1].title;
     pagesSpan.textContent = myLibrary[myLibrary.length - 1].pages;
     readSpan.textContent = myLibrary[myLibrary.length - 1].read;
+
 }
 
 function Book(title, author, pages, read){
@@ -53,8 +55,10 @@ function Book(title, author, pages, read){
     this.author = author;
     this.pages = pages;
     this.read = read;
-
 }
+
+
+
 
 function addBookToLibrary(){
     let titleVal = title.value;
@@ -68,6 +72,17 @@ function addBookToLibrary(){
     displayLastLibraryItem();
 
 }
+
+
+bookCardArea.addEventListener("click", (event)=>{
+    let bookArrayString = event.target.parentNode.dataset.arrayindex;
+    let bookArrayNum = +bookArrayString;
+    myLibrary.splice(bookArrayNum, 1);
+
+
+})
+
+
 submitForm.addEventListener("click", addBookToLibrary)
 
 
