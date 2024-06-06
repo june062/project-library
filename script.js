@@ -17,7 +17,7 @@ let myLibrary = [];
 function displayLastLibraryItem(){
     let bookCard = document.createElement("div");
     bookCard.classList.add("book-card");
-    bookCard.setAttribute("data-arrayIndex", myLibrary.length - 1); 
+    bookCard.setAttribute("data-bookId", myLibrary[myLibrary.length-1].bookId); 
     bookCardArea.appendChild(bookCard);
 
     let titleSpan =  document.createElement("span");
@@ -50,7 +50,9 @@ function displayLastLibraryItem(){
 
 }
 
+Book.id = 0;
 function Book(title, author, pages, read){
+    this.bookId = ++Book.id;
     this.title = title;
     this.author = author;
     this.pages = pages;
@@ -75,9 +77,16 @@ function addBookToLibrary(){
 
 
 bookCardArea.addEventListener("click", (event)=>{
-    let bookArrayString = event.target.parentNode.dataset.arrayindex;
+   /*  let bookArrayString = event.target.parentNode.dataset.arrayindex;
     let bookArrayNum = +bookArrayString;
-    myLibrary.splice(bookArrayNum, 1);
+    myLibrary.splice(bookArrayNum, 1);  */
+    let domData = +event.target.parentNode.dataset.bookid;
+
+
+    let bookIndex = myLibrary.findIndex(element => {
+        return element.bookId === domData; 
+    })
+    myLibrary.splice(bookIndex,1);
     if(event.target.textContent === "Delete"){
         event.target.parentNode.remove();
     }
