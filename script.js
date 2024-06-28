@@ -57,15 +57,7 @@ function displayLastLibraryItem(){
 
 }
 
-/* Book.id = 0;
-function Book(title, author, pages, read){
-    this.bookId = ++Book.id;
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-}
- */
+
 class Book {
     static id = 0;
     constructor(title, author, pages, read){
