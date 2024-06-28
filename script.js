@@ -57,7 +57,7 @@ function displayLastLibraryItem(){
 
 }
 
-Book.id = 0;
+/* Book.id = 0;
 function Book(title, author, pages, read){
     this.bookId = ++Book.id;
     this.title = title;
@@ -65,18 +65,32 @@ function Book(title, author, pages, read){
     this.pages = pages;
     this.read = read;
 }
+ */
+class Book {
+    static id = 0;
+    constructor(title, author, pages, read){
+        this.bookId = ++Book.id;
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
 
-Book.prototype.readToggle = function (){
-    let readDOMEl = document.querySelector(`[data-bookid ='${this.bookId}'] > span.read`)
-   if (this.read === "Read"){
-        this.read = "Not Read";
-        readDOMEl.textContent = "Not Read";
-   }
-   else {
-        this.read = "Read"
-        readDOMEl.textContent = "Read";
-   }
+    readToggle(){
+        let readDOMEl = document.querySelector(`[data-bookid ='${this.bookId}'] > span.read`)
+       if (this.read === "Read"){
+            this.read = "Not Read";
+            readDOMEl.textContent = "Not Read";
+       }
+       else {
+            this.read = "Read"
+            readDOMEl.textContent = "Read";
+       }
+    }
+    
+
 }
+
 
 function addBookToLibrary(){
     let titleVal = title.value;
